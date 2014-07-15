@@ -1,0 +1,22 @@
+/*CSS File for the To-Do List*/
+
+#input {
+	color: red;
+	font-size: 14px;
+
+}
+
+body {
+    background-image: url("http://www.dazzlingwallpaper.com/image/1355552480_cute_dachshund-puppy.jpg");
+    background-size: cover;
+}
+
+#todo_form li:hover {
+  color:red;
+  font-size: 18px;
+  cursor:pointer;
+}
+
+#rm {
+	color: red;
+}
