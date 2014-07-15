@@ -2,27 +2,39 @@
 
 var form = document.getElementById('todo_form');
 var list = document.getElementById('input');
-var preview = document.getElementById('preview');
-var myList = document.getElementById('ol');
-var theButton = document.getElementsByTagName('button')[0];
+ 
+var myList = document.getElementById('do');
+// var theButton = document.getElementsByTagName('button')[0];
 
-//Declaring the addText() function for adding the items to the list.
 
-function addText(){
-    var input = document.getElementById('input').value;
-    //document.getElementById('do').innerHTML = input;
-    var node =document.createElement("p");
-    var textnode=document.createTextNode(input);
-    node.appendChild(textnode);
-    document.getElementById('do').appendChild(node);
-}
+ 
+	form.onsubmit = function(event) {
+	event.preventDefault();
+	
+	var newItemList = document.createElement('li');
+	var newListNode = document.createTextNode(list.value);
+
+	newItemList.appendChild(newListNode);
+	myList.appendChild(newItemList);
+
+	var removeItem = document.createTextNode('Done');
+	var removeButton = document.createElement('button');
+
+	removeButton.appendChild(removeItem);
+	newItemList.appendChild(removeButton);
+
+	removeButton.onclick = function() {
+		myList.removeChild(newItemList);
+	};
 
 //Creating an event to remove the DOM elements
 //Dynamically deletes elements form the browser
 
-deleteAll.onClick.listen((e)); {
-  todo_list.children.clear();
-}
+// deleteAll.onClick.listen((e)); {
+// todo_list.children.clear();
+//}
+
+};
 
 
 
